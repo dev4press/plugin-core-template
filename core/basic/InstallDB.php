@@ -2,7 +2,7 @@
 
 namespace Dev4Press\Plugin\CoreSEO\Basic;
 
-use Dev4Press\v36\Core\Plugins\InstallDB as BaseInstallDB;
+use Dev4Press\v37\Core\Plugins\InstallDB as BaseInstallDB;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

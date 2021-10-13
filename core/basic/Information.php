@@ -2,7 +2,7 @@
 
 namespace Dev4Press\Plugin\CoreSEO\Basic;
 
-use Dev4Press\v36\Core\Plugins\Information as BaseInformation;
+use Dev4Press\v37\Core\Plugins\Information as BaseInformation;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

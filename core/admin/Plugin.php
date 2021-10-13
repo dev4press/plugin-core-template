@@ -2,7 +2,7 @@
 
 namespace Dev4Press\Plugin\CoreSEO\Admin;
 
-use Dev4Press\v36\Core\Admin\Menu\Plugin as BasePlugin;
+use Dev4Press\v37\Core\Admin\Menu\Plugin as BasePlugin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

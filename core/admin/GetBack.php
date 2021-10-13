@@ -2,7 +2,7 @@
 
 namespace Dev4Press\Plugin\CoreSEO\Admin;
 
-class GetBack extends \Dev4Press\v36\Core\Admin\GetBack {
+class GetBack extends \Dev4Press\v37\Core\Admin\GetBack {
 	protected function process() {
 		parent::process();
 

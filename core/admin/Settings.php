@@ -2,7 +2,7 @@
 
 namespace Dev4Press\Plugin\CoreSEO\Admin;
 
-use Dev4Press\v36\Core\Options\Settings as BaseSettings;
+use Dev4Press\v37\Core\Options\Settings as BaseSettings;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

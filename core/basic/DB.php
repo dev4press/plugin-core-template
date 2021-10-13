@@ -2,7 +2,7 @@
 
 namespace Dev4Press\Plugin\CoreSEO\Basic;
 
-use Dev4Press\v36\Core\Plugins\DB as LibDB;
+use Dev4Press\v37\Core\Plugins\DB as LibDB;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

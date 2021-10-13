@@ -3,9 +3,9 @@
 namespace Dev4Press\Plugin\CoreSEO\Admin;
 
 use Dev4Press\Plugin\CoreSEO\Basic\InstallDB;
-use function Dev4Press\v36\Functions\WP\flush_rewrite_rules;
+use Dev4Press\v37\Core\Quick\WPR;
 
-class PostBack extends \Dev4Press\v36\Core\Admin\PostBack {
+class PostBack extends \Dev4Press\v37\Core\Admin\PostBack {
 	protected function process() {
 		parent::process();
 
@@ -58,6 +58,6 @@ class PostBack extends \Dev4Press\v36\Core\Admin\PostBack {
 	protected function save_settings( $panel ) {
 		parent::save_settings( $panel );
 
-		flush_rewrite_rules();
+		WPR::flush_rewrite_rules();
 	}
 }

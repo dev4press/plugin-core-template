@@ -2,7 +2,7 @@
 
 namespace Dev4Press\Plugin\CoreSEO\Admin\Panel;
 
-use Dev4Press\v36\Core\UI\Admin\PanelSettings;
+use Dev4Press\v37\Core\UI\Admin\PanelSettings;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

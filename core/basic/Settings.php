@@ -2,7 +2,7 @@
 
 namespace Dev4Press\Plugin\CoreSEO\Basic;
 
-use Dev4Press\v36\Core\Plugins\Settings as BaseSettings;
+use Dev4Press\v37\Core\Plugins\Settings as BaseSettings;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -14,6 +14,12 @@ class Settings extends BaseSettings {
 	public $settings = array(
 		'core'     => array(
 			'activated' => 0
+		),
+		'load'     => array(
+			
+		),
+		'features' => array(
+			
 		),
 		'settings' => array()
 	);

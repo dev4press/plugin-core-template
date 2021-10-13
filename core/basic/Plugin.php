@@ -2,8 +2,8 @@
 
 namespace Dev4Press\Plugin\CoreSEO\Basic;
 
-use Dev4Press\v36\Core\DateTime;
-use Dev4Press\v36\Core\Plugins\Core;
+use Dev4Press\v37\Core\DateTime;
+use Dev4Press\v37\Core\Plugins\Core;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
