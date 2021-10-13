@@ -9,8 +9,6 @@
     <div class="d4p-cards-wrapper">
 		<?php
 
-
-
 		?>
     </div>
 </div>

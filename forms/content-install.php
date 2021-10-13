@@ -7,16 +7,14 @@ use function Dev4Press\v36\Functions\panel;
     <div class="d4p-update-info">
 		<?php
 
-
-
 		?>
 
         <div class="d4p-install-block">
             <h4>
-				<?php _e( "All Done", "gd-knowledge-base" ); ?>
+				<?php _e( "All Done", "coreseo" ); ?>
             </h4>
             <div>
-				<?php _e( "Installation completed.", "gd-knowledge-base" ); ?>
+				<?php _e( "Installation completed.", "coreseo" ); ?>
             </div>
         </div>
 
@@ -28,7 +26,7 @@ use function Dev4Press\v36\Functions\panel;
 		?>
 
         <div class="d4p-install-confirm">
-            <a class="button-primary" href="<?php echo panel()->a()->panel_url( 'about' ) ?>&install"><?php _e( "Click here to continue", "gd-knowledge-base" ); ?></a>
+            <a class="button-primary" href="<?php echo panel()->a()->panel_url( 'about' ) ?>&install"><?php _e( "Click here to continue", "coreseo" ); ?></a>
         </div>
     </div>
 	<?php echo coreseo()->recommend( 'install' ); ?>

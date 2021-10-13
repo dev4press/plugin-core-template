@@ -17,7 +17,7 @@ class PostBack extends \Dev4Press\v36\Core\Admin\PostBack {
 	}
 
 	protected function remove() {
-		$data = $_POST['gdkobtools'];
+		$data = $_POST['coreseotools'];
 
 		$remove  = isset( $data['remove'] ) ? (array) $data['remove'] : array();
 		$message = 'nothing-removed';

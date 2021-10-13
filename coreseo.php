@@ -3,7 +3,7 @@
 /*
 Plugin Name:       CoreSEO
 Plugin URI:        https://plugins.dev4press.com/coreseo/
-Description:       Collection of various SEO related tools and features, completely modular for improving website SEO.
+Description:       Collection of various SEO related tools and features, completely modular for improving website SEO with Sitemaps, social networks supports, robots control and more.
 Author:            Milan Petrovic
 Author URI:        https://www.dev4press.com/
 Text Domain:       coreseo
@@ -31,6 +31,8 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>
 */
 
+use Dev4Press\v36\WordPress;
+
 $coreseo_dirname_basic = dirname( __FILE__ ) . '/';
 $coreseo_urlname_basic = plugins_url( '/coreseo/' );
 
@@ -47,6 +49,6 @@ require_once( CORESEO_PATH . 'core/bridge.php' );
 coreseo();
 coreseo_settings();
 
-if ( D4P_ADMIN ) {
+if ( WordPress::instance()->is_admin() ) {
 	coreseo_admin();
 }

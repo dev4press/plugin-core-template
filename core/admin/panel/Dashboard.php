@@ -13,9 +13,7 @@ class Dashboard extends PanelDashboard {
 		parent::__construct( $admin );
 
 		if ( current_user_can( 'activate_plugins' ) ) {
-			$this->sidebar_links['plugin'] = array(
-
-			);
+			$this->sidebar_links['plugin'] = array();
 		} else {
 			$this->sidebar_links['basic'] = array();
 			$this->sidebar_links['about'] = array();

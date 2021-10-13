@@ -45,39 +45,39 @@ class Plugin extends BasePlugin {
 	public function after_setup_theme() {
 		$this->setup_items = array(
 			'install' => array(
-				'title' => __( "Install", "gd-knowledge-base" ),
+				'title' => __( "Install", "coreseo" ),
 				'icon'  => 'ui-traffic',
 				'type'  => 'setup',
-				'info'  => __( "Before you continue, make sure plugin installation was successful.", "gd-knowledge-base" ),
+				'info'  => __( "Before you continue, make sure plugin installation was successful.", "coreseo" ),
 				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Install'
 			),
 			'update'  => array(
-				'title' => __( "Update", "gd-knowledge-base" ),
+				'title' => __( "Update", "coreseo" ),
 				'icon'  => 'ui-traffic',
 				'type'  => 'setup',
-				'info'  => __( "Before you continue, make sure plugin was successfully updated.", "gd-knowledge-base" ),
+				'info'  => __( "Before you continue, make sure plugin was successfully updated.", "coreseo" ),
 				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Update'
 			)
 		);
 
 		$this->menu_items = array(
 			'dashboard' => array(
-				'title' => __( "Overview", "gd-knowledge-base" ),
+				'title' => __( "Overview", "coreseo" ),
 				'icon'  => 'ui-home',
 				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Dashboard'
 			),
 			'about'     => array(
-				'title' => __( "About", "gd-knowledge-base" ),
+				'title' => __( "About", "coreseo" ),
 				'icon'  => 'ui-info',
 				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\About'
 			),
 			'settings'  => array(
-				'title' => __( "Settings", "gd-knowledge-base" ),
+				'title' => __( "Settings", "coreseo" ),
 				'icon'  => 'ui-cog',
 				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Settings'
 			),
 			'tools'     => array(
-				'title' => __( "Tools", "gd-knowledge-base" ),
+				'title' => __( "Tools", "coreseo" ),
 				'icon'  => 'ui-wrench',
 				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Tools'
 			)
@@ -99,10 +99,10 @@ class Plugin extends BasePlugin {
 	public function message_process( $code, $msg ) {
 		switch ( $code ) {
 			case 'feedback-removed':
-				$msg['message'] = __( "Feedback entry is removed.", "gd-knowledge-base" );
+				$msg['message'] = __( "Feedback entry is removed.", "coreseo" );
 				break;
 			case 'page-failed':
-				$msg['message'] = __( "Page creation failed.", "gd-knowledge-base" );
+				$msg['message'] = __( "Page creation failed.", "coreseo" );
 				$msg['color']   = 'error';
 				break;
 		}
@@ -165,9 +165,9 @@ class Plugin extends BasePlugin {
 		$this->enqueue->js( 'coreseo-meta' );
 
 		$_data = apply_filters( 'coreseo_admin_posts_javascript_data', array(
-			'string_remove_file'       => __( "Remove", "gd-knowledge-base" ),
-			'string_media_file_title'  => __( "Select Files", "gd-knowledge-base" ),
-			'string_media_file_button' => __( "Use Selected Files", "gd-knowledge-base" )
+			'string_remove_file'       => __( "Remove", "coreseo" ),
+			'string_media_file_title'  => __( "Select Files", "coreseo" ),
+			'string_media_file_button' => __( "Use Selected Files", "coreseo" )
 		) );
 
 		wp_localize_script( 'd4plib3-coreseo-meta', 'coreseo_meta_data', $_data );
