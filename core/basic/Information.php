@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Basic;
+namespace Dev4Press\Plugin\SweepPress\Basic;
 
 use Dev4Press\v37\Core\Plugins\Information as BaseInformation;
 
@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Information extends BaseInformation {
-	public $code = 'coreseo';
+	public $code = 'sweeppress';
 
 	public $version = '1.0';
 	public $build = 50;

@@ -2,7 +2,7 @@
 	<?php
 
 	if ( current_user_can( 'activate_plugins' ) ) {
-		include( CORESEO_PATH . 'forms/content-dashboard-status.php' );
+		include( SWEEPPRESS_PATH . 'forms/content-dashboard-status.php' );
 	}
 
 	?>

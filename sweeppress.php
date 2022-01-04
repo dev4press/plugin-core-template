@@ -1,21 +1,21 @@
 <?php
 
 /*
-Plugin Name:       CoreSEO
-Plugin URI:        https://plugins.dev4press.com/coreseo/
-Description:       Collection of various SEO related tools and features, completely modular for improving website SEO with Sitemaps, social networks supports, robots control and more.
+Plugin Name:       SweepPress
+Plugin URI:        https://sweep.press/
+Description:       Remove various old, unused or obsolete data from the database, optimize database for best performance. Schedule cleanup task to un automatically.
 Author:            Milan Petrovic
 Author URI:        https://www.dev4press.com/
-Text Domain:       coreseo
+Text Domain:       sweeppress
 Version:           1.0
 Requires at least: 5.3
 Tested up to:      5.9
-Requires PHP:      7.0
+Requires PHP:      7.2
 License:           GPLv3 or later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
-Copyright 2008 - 2021 Milan Petrovic (email: milan@gdragon.info)
+Copyright 2008 - 2022 Milan Petrovic (email: milan@gdragon.info)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,22 +33,22 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 
 use Dev4Press\v37\WordPress;
 
-$coreseo_dirname_basic = dirname( __FILE__ ) . '/';
-$coreseo_urlname_basic = plugins_url( '/coreseo/' );
+$sweeppress_dirname_basic = dirname( __FILE__ ) . '/';
+$sweeppress_urlname_basic = plugins_url( '/', __FILE__ );
 
-define( 'CORESEO_PATH', $coreseo_dirname_basic );
-define( 'CORESEO_URL', $coreseo_urlname_basic );
-define( 'CORESEO_D4PLIB_PATH', $coreseo_dirname_basic . 'd4plib/' );
-define( 'CORESEO_D4PLIB_URL', $coreseo_urlname_basic . 'd4plib/' );
+define( 'SWEEPPRESS_PATH', $sweeppress_dirname_basic );
+define( 'SWEEPPRESS_URL', $sweeppress_urlname_basic );
+define( 'SWEEPPRESS_D4PLIB_PATH', $sweeppress_dirname_basic . 'd4plib/' );
+define( 'SWEEPPRESS_D4PLIB_URL', $sweeppress_urlname_basic . 'd4plib/' );
 
-require_once( CORESEO_D4PLIB_PATH . 'core.php' );
+require_once( SWEEPPRESS_D4PLIB_PATH . 'core.php' );
 
-require_once( CORESEO_PATH . 'core/autoload.php' );
-require_once( CORESEO_PATH . 'core/bridge.php' );
+require_once( SWEEPPRESS_PATH . 'core/autoload.php' );
+require_once( SWEEPPRESS_PATH . 'core/bridge.php' );
 
-coreseo();
-coreseo_settings();
+sweeppress();
+sweeppress_settings();
 
 if ( WordPress::instance()->is_admin() ) {
-	coreseo_admin();
+	sweeppress_admin();
 }

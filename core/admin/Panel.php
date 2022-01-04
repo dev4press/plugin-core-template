@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Admin;
+namespace Dev4Press\Plugin\SweepPress\Admin;
 
 use Dev4Press\v37\Core\UI\Admin\Panel as BasePanel;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Admin;
+namespace Dev4Press\Plugin\SweepPress\Admin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -29,7 +29,7 @@ class MetaBoxes {
 	public function save_post( $post_id ) {
 		$is_autosave    = wp_is_post_autosave( $post_id );
 		$is_revision    = wp_is_post_revision( $post_id );
-		$is_valid_nonce = isset( $_POST['coreseo-nonce'] ) && wp_verify_nonce( $_POST['coreseo-nonce'], 'coreseo_meta_box' );
+		$is_valid_nonce = isset( $_POST['sweeppress-nonce'] ) && wp_verify_nonce( $_POST['sweeppress-nonce'], 'sweeppress_meta_box' );
 
 		if ( $is_autosave || $is_revision || ! $is_valid_nonce ) {
 			return;

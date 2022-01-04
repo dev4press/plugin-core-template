@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Basic;
+namespace Dev4Press\Plugin\SweepPress\Basic;
 
 use Dev4Press\v37\Core\Plugins\InstallDB as BaseInstallDB;
 
@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class InstallDB extends BaseInstallDB {
-	protected $prefix = 'coreseo';
+	protected $prefix = 'sweeppress';
 	protected $tables = array();
 
 	public static function instance() : InstallDB {

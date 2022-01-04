@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Base;
+namespace Dev4Press\Plugin\SweepPress\Base;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -13,7 +13,7 @@ abstract class Feature {
 
 	public function __construct() {
 		if ( $this->has_settings ) {
-			$this->settings = coreseo_settings()->prefix_get( $this->feature_name . '__', 'features' );
+			$this->settings = sweeppress_settings()->prefix_get( $this->feature_name . '__', 'features' );
 		}
 	}
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Basic;
+namespace Dev4Press\Plugin\SweepPress\Basic;
 
 use Dev4Press\v37\Core\Plugins\DB as LibDB;
 
@@ -9,13 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class DB extends LibDB {
-	public $_prefix = 'coreseo';
+	public $_prefix = 'sweeppress';
 	public $_tables = array();
 
-	public static function instance() {
+	public static function instance() : DB {
 		static $instance = null;
 
-		if ( ! isset( $instance ) ) {
+		if ( is_null( $instance ) ) {
 			$instance = new DB();
 		}
 

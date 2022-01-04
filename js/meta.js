@@ -1,17 +1,17 @@
 /*jslint regexp: true, nomen: true, sloppy: true, eqeq: true, vars: true, white: true, plusplus: true, maxerr: 50, indent: 4 */
-/*global coreseo_meta_data, wp */
+/*global sweeppress_meta_data, wp */
 
 ;(function($, window, document, undefined) {
     window.wp = window.wp || {};
-    window.wp.coreseo = window.wp.coreseo || {};
+    window.wp.sweeppress = window.wp.sweeppress || {};
 
-    window.wp.coreseo.meta = {
+    window.wp.sweeppress.meta = {
         init: function() {
 
         }
     };
 
     $(document).ready(function() {
-        wp.coreseo.meta.init();
+        wp.sweeppress.meta.init();
     });
 })(jQuery, window, document);

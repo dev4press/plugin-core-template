@@ -1,8 +1,8 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Admin;
+namespace Dev4Press\Plugin\SweepPress\Admin;
 
-use Dev4Press\Plugin\CoreSEO\Basic\InstallDB;
+use Dev4Press\Plugin\SweepPress\Basic\InstallDB;
 use Dev4Press\v37\Core\Quick\WPR;
 
 class PostBack extends \Dev4Press\v37\Core\Admin\PostBack {
@@ -13,11 +13,11 @@ class PostBack extends \Dev4Press\v37\Core\Admin\PostBack {
 			$this->check_referer( 'tools' );
 		}
 
-		do_action( 'coreseo_admin_postback_handler', $this->p() );
+		do_action( 'sweeppress_admin_postback_handler', $this->p() );
 	}
 
 	protected function remove() {
-		$data = $_POST['coreseotools'];
+		$data = $_POST['sweeppresstools'];
 
 		$remove  = isset( $data['remove'] ) ? (array) $data['remove'] : array();
 		$message = 'nothing-removed';
@@ -42,7 +42,7 @@ class PostBack extends \Dev4Press\v37\Core\Admin\PostBack {
 			}
 
 			if ( isset( $remove['disable'] ) && $remove['disable'] == 'on' ) {
-				coreseo()->deactivate();
+				sweeppress()->deactivate();
 
 				wp_redirect( admin_url( 'plugins.php' ) );
 				exit;

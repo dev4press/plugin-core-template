@@ -4,9 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function d4p_plugin_coreseo_autoload( $class ) {
+function d4p_plugin_sweeppress_autoload( $class ) {
 	$path = dirname( __FILE__ ) . '/';
-	$base = 'Dev4Press\\Plugin\\CoreSEO\\';
+	$base = 'Dev4Press\\Plugin\\SweepPress\\';
 
 	if ( substr( $class, 0, strlen( $base ) ) == $base ) {
 		$clean = substr( $class, strlen( $base ) );
@@ -27,4 +27,4 @@ function d4p_plugin_coreseo_autoload( $class ) {
 	}
 }
 
-spl_autoload_register( 'd4p_plugin_coreseo_autoload' );
+spl_autoload_register( 'd4p_plugin_sweeppress_autoload' );

@@ -3,7 +3,7 @@
 use function Dev4Press\v37\Functions\panel;
 
 ?>
-<div class="d4p-content">
+<div class="d4p-content d4p-setup-wrapper">
     <div class="d4p-update-info">
 		<?php
 
@@ -11,23 +11,23 @@ use function Dev4Press\v37\Functions\panel;
 
         <div class="d4p-install-block">
             <h4>
-				<?php _e( "All Done", "coreseo" ); ?>
+				<?php _e( "All Done", "sweeppress" ); ?>
             </h4>
             <div>
-				<?php _e( "Installation completed.", "coreseo" ); ?>
+				<?php _e( "Installation completed.", "sweeppress" ); ?>
             </div>
         </div>
 
 		<?php
 
-		coreseo_settings()->set( 'install', false, 'info' );
-		coreseo_settings()->set( 'update', false, 'info', true );
+		sweeppress_settings()->set( 'install', false, 'info' );
+		sweeppress_settings()->set( 'update', false, 'info', true );
 
 		?>
 
         <div class="d4p-install-confirm">
-            <a class="button-primary" href="<?php echo panel()->a()->panel_url( 'about' ) ?>&install"><?php _e( "Click here to continue", "coreseo" ); ?></a>
+            <a class="button-primary" href="<?php echo panel()->a()->panel_url( 'about' ) ?>&install"><?php _e( "Click here to continue", "sweeppress" ); ?></a>
         </div>
     </div>
-	<?php echo coreseo()->recommend( 'install' ); ?>
+	<?php echo sweeppress()->recommend( 'install' ); ?>
 </div>

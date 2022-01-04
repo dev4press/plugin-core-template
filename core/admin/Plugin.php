@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Admin;
+namespace Dev4Press\Plugin\SweepPress\Admin;
 
 use Dev4Press\v37\Core\Admin\Menu\Plugin as BasePlugin;
 
@@ -9,10 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Plugin extends BasePlugin {
-	public $plugin = 'coreseo';
-	public $plugin_prefix = 'coreseo';
-	public $plugin_menu = 'CoreSEO';
-	public $plugin_title = 'CoreSEO';
+	public $plugin = 'sweeppress';
+	public $plugin_prefix = 'sweeppress';
+	public $plugin_menu = 'SweepPress';
+	public $plugin_title = 'SweepPress';
 
 	public $has_metabox = true;
 
@@ -29,63 +29,63 @@ class Plugin extends BasePlugin {
 	}
 
 	public function constructor() {
-		$this->url  = CORESEO_URL;
-		$this->path = CORESEO_PATH;
+		$this->url  = SWEEPPRESS_URL;
+		$this->path = SWEEPPRESS_PATH;
 
-		add_action( 'coreseo_plugin_core_ready', array( $this, 'ready' ) );
+		add_action( 'sweeppress_plugin_core_ready', array( $this, 'ready' ) );
 
 		Columns::instance();
 		MetaBoxes::instance();
 	}
 
 	public function ready() {
-		do_action( 'coreseo_admin_load_addons' );
+		do_action( 'sweeppress_admin_load_addons' );
 	}
 
 	public function after_setup_theme() {
 		$this->setup_items = array(
 			'install' => array(
-				'title' => __( "Install", "coreseo" ),
+				'title' => __( "Install", "sweeppress" ),
 				'icon'  => 'ui-traffic',
 				'type'  => 'setup',
-				'info'  => __( "Before you continue, make sure plugin installation was successful.", "coreseo" ),
-				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Install'
+				'info'  => __( "Before you continue, make sure plugin installation was successful.", "sweeppress" ),
+				'class' => '\\Dev4Press\\Plugin\\SweepPress\\Admin\\Panel\\Install'
 			),
 			'update'  => array(
-				'title' => __( "Update", "coreseo" ),
+				'title' => __( "Update", "sweeppress" ),
 				'icon'  => 'ui-traffic',
 				'type'  => 'setup',
-				'info'  => __( "Before you continue, make sure plugin was successfully updated.", "coreseo" ),
-				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Update'
+				'info'  => __( "Before you continue, make sure plugin was successfully updated.", "sweeppress" ),
+				'class' => '\\Dev4Press\\Plugin\\SweepPress\\Admin\\Panel\\Update'
 			)
 		);
 
 		$this->menu_items = array(
 			'dashboard' => array(
-				'title' => __( "Overview", "coreseo" ),
+				'title' => __( "Overview", "sweeppress" ),
 				'icon'  => 'ui-home',
-				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Dashboard'
+				'class' => '\\Dev4Press\\Plugin\\SweepPress\\Admin\\Panel\\Dashboard'
 			),
 			'about'     => array(
-				'title' => __( "About", "coreseo" ),
+				'title' => __( "About", "sweeppress" ),
 				'icon'  => 'ui-info',
-				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\About'
+				'class' => '\\Dev4Press\\Plugin\\SweepPress\\Admin\\Panel\\About'
 			),
 			'settings'  => array(
-				'title' => __( "Settings", "coreseo" ),
+				'title' => __( "Settings", "sweeppress" ),
 				'icon'  => 'ui-cog',
-				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Settings'
+				'class' => '\\Dev4Press\\Plugin\\SweepPress\\Admin\\Panel\\Settings'
 			),
 			'tools'     => array(
-				'title' => __( "Tools", "coreseo" ),
+				'title' => __( "Tools", "sweeppress" ),
 				'icon'  => 'ui-wrench',
-				'class' => '\\Dev4Press\\Plugin\\CoreSEO\\Admin\\Panel\\Tools'
+				'class' => '\\Dev4Press\\Plugin\\SweepPress\\Admin\\Panel\\Tools'
 			)
 		);
 	}
 
 	public function svg_icon() : string {
-		return coreseo()->svg_icon;
+		return sweeppress()->svg_icon;
 	}
 
 	public function run_getback() {
@@ -99,10 +99,10 @@ class Plugin extends BasePlugin {
 	public function message_process( $code, $msg ) {
 		switch ( $code ) {
 			case 'feedback-removed':
-				$msg['message'] = __( "Feedback entry is removed.", "coreseo" );
+				$msg['message'] = __( "Feedback entry is removed.", "sweeppress" );
 				break;
 			case 'page-failed':
-				$msg['message'] = __( "Page creation failed.", "coreseo" );
+				$msg['message'] = __( "Page creation failed.", "sweeppress" );
 				$msg['color']   = 'error';
 				break;
 		}
@@ -111,39 +111,39 @@ class Plugin extends BasePlugin {
 	}
 
 	public function register_scripts_and_styles() {
-		$this->enqueue->register( 'css', 'coreseo-meta',
+		$this->enqueue->register( 'css', 'sweeppress-meta',
 			array(
 				'path' => 'css/',
 				'file' => 'meta',
 				'ext'  => 'css',
 				'min'  => true,
 				'req'  => array( 'wp-color-picker' ),
-				'ver'  => coreseo_settings()->file_version(),
+				'ver'  => sweeppress_settings()->file_version(),
 				'src'  => 'plugin'
-			) )->register( 'css', 'coreseo-admin',
+			) )->register( 'css', 'sweeppress-admin',
 			array(
 				'path' => 'css/',
 				'file' => 'admin',
 				'ext'  => 'css',
 				'min'  => true,
-				'ver'  => coreseo_settings()->file_version(),
+				'ver'  => sweeppress_settings()->file_version(),
 				'src'  => 'plugin'
-			) )->register( 'js', 'coreseo-meta',
+			) )->register( 'js', 'sweeppress-meta',
 			array(
 				'path' => 'js/',
 				'file' => 'meta',
 				'ext'  => 'js',
 				'min'  => true,
 				'req'  => array( 'wp-color-picker' ),
-				'ver'  => coreseo_settings()->file_version(),
+				'ver'  => sweeppress_settings()->file_version(),
 				'src'  => 'plugin'
-			) )->register( 'js', 'coreseo-admin',
+			) )->register( 'js', 'sweeppress-admin',
 			array(
 				'path' => 'js/',
 				'file' => 'admin',
 				'ext'  => 'js',
 				'min'  => true,
-				'ver'  => coreseo_settings()->file_version(),
+				'ver'  => sweeppress_settings()->file_version(),
 				'src'  => 'plugin'
 			) );
 	}
@@ -157,25 +157,25 @@ class Plugin extends BasePlugin {
 	}
 
 	protected function extra_enqueue_scripts_plugin() {
-		$this->enqueue->css( 'coreseo-admin' )->js( 'coreseo-admin' );
+		$this->enqueue->css( 'sweeppress-admin' )->js( 'sweeppress-admin' );
 	}
 
 	protected function extra_enqueue_scripts_metabox() {
-		$this->enqueue->css( 'coreseo-meta' );
-		$this->enqueue->js( 'coreseo-meta' );
+		$this->enqueue->css( 'sweeppress-meta' );
+		$this->enqueue->js( 'sweeppress-meta' );
 
-		$_data = apply_filters( 'coreseo_admin_posts_javascript_data', array(
-			'string_remove_file'       => __( "Remove", "coreseo" ),
-			'string_media_file_title'  => __( "Select Files", "coreseo" ),
-			'string_media_file_button' => __( "Use Selected Files", "coreseo" )
+		$_data = apply_filters( 'sweeppress_admin_posts_javascript_data', array(
+			'string_remove_file'       => __( "Remove", "sweeppress" ),
+			'string_media_file_title'  => __( "Select Files", "sweeppress" ),
+			'string_media_file_button' => __( "Use Selected Files", "sweeppress" )
 		) );
 
-		wp_localize_script( 'd4plib3-coreseo-meta', 'coreseo_meta_data', $_data );
+		wp_localize_script( 'd4plib3-sweeppress-meta', 'sweeppress_meta_data', $_data );
 	}
 
 	protected function extra_enqueue_scripts_postslist() {
 		if ( $this->is_valid_post_type() ) {
-			$this->enqueue->css( 'coreseo-meta' );
+			$this->enqueue->css( 'sweeppress-meta' );
 		}
 	}
 
@@ -189,8 +189,8 @@ class Plugin extends BasePlugin {
 		return true;
 	}
 
-	public function settings() : \Dev4Press\Plugin\CoreSEO\Basic\Settings {
-		return coreseo_settings();
+	public function settings() : \Dev4Press\Plugin\SweepPress\Basic\Settings {
+		return sweeppress_settings();
 	}
 
 	public function settings_definitions() : Settings {

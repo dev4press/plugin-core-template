@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Basic;
+namespace Dev4Press\Plugin\SweepPress\Basic;
 
 use Dev4Press\v37\Core\DateTime;
 use Dev4Press\v37\Core\Plugins\Core;
@@ -10,12 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Plugin extends Core {
-	public $plugin = 'coreseo';
+	public $plugin = 'sweeppress';
 
 	private $_datetime = null;
 
 	public function __construct() {
-		$this->url       = CORESEO_URL;
+		$this->url       = SWEEPPRESS_URL;
 		$this->_datetime = new DateTime();
 
 		parent::__construct();
@@ -32,12 +32,12 @@ class Plugin extends Core {
 	}
 
 	public function run() {
-		do_action( 'coreseo_load_settings' );
-		do_action( 'coreseo_plugin_init' );
+		do_action( 'sweeppress_load_settings' );
+		do_action( 'sweeppress_plugin_init' );
 	}
 
 	public function s() {
-		return coreseo_settings();
+		return sweeppress_settings();
 	}
 
 	public function datetime() : DateTime {

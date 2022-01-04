@@ -3,15 +3,15 @@
 
 ;(function($, window, document, undefined) {
     window.wp = window.wp || {};
-    window.wp.coreseo = window.wp.coreseo || {};
+    window.wp.sweeppress = window.wp.sweeppress || {};
 
-    window.wp.coreseo.admin = {
+    window.wp.sweeppress.admin = {
         init: function() {
 
         }
     };
 
     $(document).ready(function() {
-        wp.coreseo.admin.init();
+        wp.sweeppress.admin.init();
     });
 })(jQuery, window, document);

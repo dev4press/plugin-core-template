@@ -1,4 +1,4 @@
-<?php // include( CORESEO_PATH . 'forms/content-about-minor.php' ); ?>
+<?php // include( SWEEPPRESS_PATH . 'forms/content-about-minor.php' ); ?>
 
 <div class="d4p-about-whatsnew">
     <div class="d4p-whatsnew-section d4p-whatsnew-heading">
@@ -27,7 +27,7 @@
                 </p>
             </div>
             <div class="d4p-layout-unit half align-left">
-                <img src="https://dev4press.s3.amazonaws.com/plugins/coreseo/5.0/about/five.jpg"/>
+                <img src="https://dev4press.s3.amazonaws.com/plugins/sweeppress/5.0/about/five.jpg"/>
             </div>
         </div>
         <div class="d4p-layout-grid">
@@ -41,7 +41,7 @@
                 </p>
             </div>
             <div class="d4p-layout-unit half align-left">
-                <img src="https://dev4press.s3.amazonaws.com/plugins/coreseo/5.0/about/blocks.jpg"/>
+                <img src="https://dev4press.s3.amazonaws.com/plugins/sweeppress/5.0/about/blocks.jpg"/>
             </div>
         </div>
         <div class="d4p-layout-grid">

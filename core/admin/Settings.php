@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Admin;
+namespace Dev4Press\Plugin\SweepPress\Admin;
 
 use Dev4Press\v37\Core\Options\Settings as BaseSettings;
 
@@ -20,12 +20,12 @@ class Settings extends BaseSettings {
 	}
 
 	protected function value( $name, $group = 'settings', $default = null ) {
-		return coreseo_settings()->get( $name, $group, $default );
+		return sweeppress_settings()->get( $name, $group, $default );
 	}
 
 	protected function init() {
 		$this->settings = array();
 
-		$this->settings = apply_filters( 'coreseo_admin_internal_settings', $this->settings );
+		$this->settings = apply_filters( 'sweeppress_admin_internal_settings', $this->settings );
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev4Press\Plugin\CoreSEO\Basic;
+namespace Dev4Press\Plugin\SweepPress\Basic;
 
 use Dev4Press\v37\Core\Plugins\Settings as BaseSettings;
 
@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Settings extends BaseSettings {
-	public $base = 'coreseo';
+	public $base = 'sweeppress';
 
 	public $settings = array(
 		'core'     => array(
@@ -37,6 +37,6 @@ class Settings extends BaseSettings {
 	protected function constructor() {
 		$this->info = new Information();
 
-		add_action( 'coreseo_load_settings', array( $this, 'init' ) );
+		add_action( 'sweeppress_load_settings', array( $this, 'init' ) );
 	}
 }
